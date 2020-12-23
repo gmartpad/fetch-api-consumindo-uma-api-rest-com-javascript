@@ -1,13 +1,10 @@
-const informacoesClientes = [
-    {
-        cpf: 11822733904,
-        nome: "Laura",
-    },
-    {
-        cpf: 11822733904,
-        nome: "Clarice"
-    },
-];
+fetch('http://localhost:4000/clientes')
+.then(response => {
+    return response.json();
+})
+.then(json => {
+    return json;
+})
 
 const corpoTabela = document.querySelector("[data-conteudo-tabela]");
 
