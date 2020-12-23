@@ -1,11 +1,3 @@
-fetch('http://localhost:4000/clientes')
-.then(response => {
-    return response.json();
-})
-.then(json => {
-    return json;
-})
-
 const corpoTabela = document.querySelector("[data-conteudo-tabela]");
 
 const exibeCliente = (cpf, nome) => {
@@ -23,6 +15,8 @@ const exibeCliente = (cpf, nome) => {
 
 }
 
-informacoesClientes.forEach(indice => {
-    corpoTabela.appendChild(exibeCliente(indice.cpf, indice.nome))
+listarClientes().then( listaDeClientes => {
+    listaDeClientes.forEach(indice => {
+        corpoTabela.appendChild(exibeCliente(indice.cpf, indice.nome))
+    })
 })
