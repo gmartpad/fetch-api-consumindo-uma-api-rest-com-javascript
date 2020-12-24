@@ -12,7 +12,7 @@ const verificaCPFInvalidos = (cpf) => {
         "00000000000"
     ]
 
-    return cpfsInvalidos.indexOf(cpf) === 1;
+    return cpfsInvalidos.indexOf(cpf) === -1;
 
 }
 
