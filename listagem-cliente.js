@@ -7,6 +7,15 @@ const removeCliente = (id) => {
     }
 }
 
+const editaCliente = (id) => {
+    // if(confirm("Deseja deletar o cliente ?")){
+        // deletarClientes(id);
+        setTimeout(()=>{
+            window.location.reload(true);            
+        }, 100);
+    // }
+}
+
 const corpoTabela = document.querySelector("[data-conteudo-tabela]");
 
 const exibeCliente = (cpf, nome, id) => {
@@ -20,6 +29,12 @@ const exibeCliente = (cpf, nome, id) => {
         class="btn btn-danger"
         onclick="removeCliente(${id})"
     >EXCLUIR</button>
+    <a href="edita-clientes.html">
+        <button
+            type="button" 
+            class="btn btn-info"
+        >EDITAR</button>
+    </a>
     </tr>
     `
     

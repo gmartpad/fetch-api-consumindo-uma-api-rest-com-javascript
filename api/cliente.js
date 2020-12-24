@@ -32,3 +32,15 @@ const deletarClientes = (id) => {
         method: 'DELETE'
     })
 }
+
+const detalhaCliente = (id) => {
+    return fetch(`http://localhost:4000/clientes/cliente/${id}`, {
+        method: 'GET'
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(json => {
+        return json;
+    })
+}
