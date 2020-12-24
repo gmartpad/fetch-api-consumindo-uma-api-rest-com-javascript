@@ -29,7 +29,7 @@ const exibeCliente = (cpf, nome, id) => {
         class="btn btn-danger"
         onclick="removeCliente(${id})"
     >EXCLUIR</button>
-    <a href="edita-clientes.html">
+    <a href="edita-clientes.html?id=${id}">
         <button
             type="button" 
             class="btn btn-info"
