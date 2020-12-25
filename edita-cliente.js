@@ -12,6 +12,34 @@ detalhaCliente(id).then(dados=>{
 
 const formEdicao = document.querySelector('[data-form]');
 
+const mensagemSucesso = (mensagem) => {
+    const linha = document.createElement('tr');
+    
+    const conteudo = `
+        <div class="alert alert-success" role="alert">
+            ${mensagem}
+        </div>
+    `
+    
+    linha.innerHTML = conteudo;
+
+    return linha;
+}
+
+const mensagemErro = (mensagem) => {
+    const linha = document.createElement('tr');
+    
+    const conteudo = `
+        <div class="alert alert-warning" role="alert">
+            ${mensagem}
+        </div>
+    `
+    
+    linha.innerHTML = conteudo;
+
+    return linha;
+}
+
 formEdicao.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -20,7 +48,14 @@ formEdicao.addEventListener('submit', e => {
         return;
     }
 
-    editaCliente(id, inputCPF.value, inputNome.value);
+    editaCliente(id, inputCPF.value, inputNome.value)
+    .then(response => {
+        if(response.status === 200){
+            formEdicao.appendChild(mensagemSucesso('Cliente editado com sucesso!')); 
+        }else{
+            formEdicao.appendChild(mensagemErro('Erro na edição do cliente!'));
+        }
+    });
     // window.location.pathname = "/C:/Users/leona/Desktop/Cursos/CursosJavaScript/fetch-api-consumindo-uma-api-rest-com-javascript/clientes.html";
 
 })
