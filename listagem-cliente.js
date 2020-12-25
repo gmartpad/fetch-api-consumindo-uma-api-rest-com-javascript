@@ -7,15 +7,6 @@ const removeCliente = (id) => {
     }
 }
 
-const editaCliente = (id) => {
-    // if(confirm("Deseja deletar o cliente ?")){
-        // deletarClientes(id);
-        setTimeout(()=>{
-            window.location.reload(true);            
-        }, 100);
-    // }
-}
-
 const corpoTabela = document.querySelector("[data-conteudo-tabela]");
 
 const exibeCliente = (cpf, nome, id) => {
